@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "14.18.0"
+# Habilitar esta sección cuándo se contemplen pruebas en el proceso de CI/CD
+scripts: 
+  - "echo \"EJECUTANDO PRUEBAS...\""
+  #- "npm run test"
+deploy:
+  provider: heroku
+  api_key: $HEROKU_API_KEY
+  app: $APP
+  on:
+    branch: develop
